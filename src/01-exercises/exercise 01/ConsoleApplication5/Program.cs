@@ -10,7 +10,9 @@ namespace ConsoleApplication5
     {
         static void Main(string[] args)
         {
-            int number = 23;
+
+            Random rnd = new Random();
+            int number = rnd.Next(1, 100);
             Console.WriteLine("Ma valin välja ühe suvalise numbri [1-100]. Proovi see ära arvata :)");
             Console.Write("Sina pakud ");
             int userGuess = int.Parse(Console.ReadLine());
