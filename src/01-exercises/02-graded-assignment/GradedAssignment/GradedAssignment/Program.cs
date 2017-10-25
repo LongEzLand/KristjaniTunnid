@@ -11,6 +11,8 @@ namespace GradedAssignment
         static void Main(string[] args)
         {
             Console.WriteLine("Discount calculator");
+            Console.WriteLine();
+            Console.WriteLine("Please enter the Price");
         }
     }
 }
