@@ -14,37 +14,45 @@ namespace DiceRoller
             Console.WriteLine("> /roll 3d6 2d8");
             Console.WriteLine();
 
-            var rnGenD6 = new Random();
-            var rnGenD8 = new Random();
+            DiceRoller diceRoller = new DiceRoller();
+            List<DiceRoll> diceRolls = diceRoller.Roll(
+                new List<Dice> { Dice.D6, Dice.D6, Dice.D6, Dice.D8, Dice.D8 });
 
-            var random = new Random();
-            var total = 0;
-
-            for (var i=0; i<3; i++)
+            foreach (var diceRoll in diceRolls)
             {
-                var roll = random.Next(1, 7);
-                total += roll;
-
-                Console.WriteLine($"1d6: { roll }");
+                Console.WriteLine($"1{diceRoll.Dice}: {diceRoll.Value}");
             }
 
-            
+            Console.WriteLine();
+            Console.WriteLine($"Roll total: { diceRolls.Sum(x => x.)}"
 
-            for (var i = 0; i < 2; i++)
-            {
-                var roll = random.Next(1, 9);
-                total += roll;
+            /*var total = 0;
 
-                Console.WriteLine($"1d8: { roll }");
-            }
+             var d6 = new Dice.D6;
 
-            
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("Roll total: 20");
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine(">");
+             for (var i=0; i<3; i++)
+             {
+                 var roll = d6.Roll(6);
+                 total += roll;
+
+                 Console.WriteLine($"1d6: {roll}");
+             }
+
+             Dice d8 = new Dice.D8;
+             for (var i=0; i<2; i++)
+             {
+                 var roll = d8.Roll(8);
+                 total += roll;
+
+                 Console.WriteLine($"{}: {roll}");
+             }
+
+             Console.WriteLine();
+             Console.WriteLine();
+             Console.WriteLine("Roll total: 20");
+             Console.WriteLine();
+             Console.WriteLine();
+             Console.WriteLine(">");*/
             Console.ReadLine();
         }
     }
